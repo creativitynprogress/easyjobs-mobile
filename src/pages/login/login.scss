@@ -1,0 +1,28 @@
+page-login {
+
+    .verical_center {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .verticalhorizontal_center{
+        position: relative;
+        top: 50%;
+        left: 50%;
+        width: auto;
+        height: 90%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+    
+    .div_login{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    
+    .text_element{
+        width: 100%;
+        //font-size:3vh
+    }
+
+}

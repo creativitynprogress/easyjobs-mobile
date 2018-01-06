@@ -1,0 +1,34 @@
+page-portfolio {
+
+    .header-image {
+        background-image: url(https://scontent.fmex5-1.fna.fbcdn.net/v/t1.0-9/13173723_10209270209893562_5127341971785259498_n.jpg?oh=2409a808d888bf006845b3060bc18ef1&oe=5A911C44);
+        height: 40vh;
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+        width: 200px;
+        height: 200px;
+    }
+     
+    .main-content {
+        background-color: white;
+    }
+
+    .description{
+        position: relative;
+        top: 100%;
+        transform: translateY(-100%);
+        color: white;
+        text-shadow: 2px 2px 4px #000000;
+        margin-top:0px;
+        padding:15px;
+    }
+
+    .add-label{
+        position: relative;
+        left:50%;
+        top:50%;
+        transform:translate(-50%,-50%);
+    }
+
+}

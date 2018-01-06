@@ -1,0 +1,32 @@
+<ion-menu [content]="content">
+  
+  <ion-content scrollbar-y-auto>
+
+      <div class="crop">
+          <img src="https://scontent.fmex5-1.fna.fbcdn.net/v/t1.0-9/13173723_10209270209893562_5127341971785259498_n.jpg?oh=2409a808d888bf006845b3060bc18ef1&oe=5A911C44"  />
+          </div>
+
+          <div style="overflow: hidden; text-align: center;">
+              <span  class="waiter_data" ><b> Adrian Alvarez </b></span><br>
+          </div>
+
+
+          <hr>
+
+
+          <button menuClose ion-item no-lines *ngFor="let p of pages" (click)="openPage(p)">
+              <ion-icon name={{p.icon}} style="margin-right:5px"></ion-icon>
+              {{p.title}}
+            </button>
+
+            <button ion-button color="primary" class="logut_button" (click)="onclick_logout()">Cerrar sesión</button>
+          
+
+  </ion-content>
+
+</ion-menu>
+
+
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

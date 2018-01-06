@@ -1,0 +1,139 @@
+<!--
+  Generated template for the PortfolioPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar color="primary">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+    <ion-title>Adrian Alvarez Galicia</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+  
+  
+   <div class="main-content" pdding style="background:#FAFAFA;width:100%">
+
+      <div [ngSwitch]="tabs">
+
+        <div *ngSwitchCase="'pictures'"> 
+      <ion-grid >
+        <ion-row>
+                <ion-col col-6 *ngFor="let image of images">
+                        <ion-card (click)="optionsImage(image.img)">
+                                <img src="{{image.img}}"/>
+                            </ion-card>
+                </ion-col>
+
+                <ion-col col-6 >
+                    <ion-card style="height:100%" color="primary">
+                        <h2 align="center" class="add-label" >AÑADIR FOTO</h2>    
+                        </ion-card>
+            </ion-col>
+
+        </ion-row>
+      </ion-grid>
+        </div>
+
+        <div *ngSwitchCase="'documents'">
+      <ion-grid >
+          <ion-row>
+                  <ion-col col-6 *ngFor="let doc of documents">
+                          <ion-card (click)="optionsImage(doc.img)">
+                                  <img src="{{doc.img}}"/>
+                              </ion-card>
+                  </ion-col>
+
+
+                  <ion-col col-6 >
+                      <ion-card style="height:100%" color="primary">
+                          <h2 align="center" class="add-label" >AÑADIR DOCUMENTO</h2>    
+                          </ion-card>
+              </ion-col>
+  
+          </ion-row>
+        </ion-grid>
+    </div>
+
+      <div  *ngSwitchCase="'information'">
+
+          <img style="display:block;margin:auto; width:100%" src="https://scontent.fmex5-1.fna.fbcdn.net/v/t1.0-9/13173723_10209270209893562_5127341971785259498_n.jpg?oh=2409a808d888bf006845b3060bc18ef1&oe=5A911C44">
+
+          <ion-item>
+              <ion-label color="primary" floating>Nombre completo</ion-label>
+              <ion-input></ion-input>
+          </ion-item>
+    
+          
+    
+          <ion-item>
+              <ion-label color="primary" floating>Carrea/ especialidad</ion-label>
+              <ion-input></ion-input>
+          </ion-item>
+    
+          <ion-item>
+              <ion-label color="primary" floating>Lugar de recidencia (Estado)</ion-label>
+              <ion-input></ion-input>
+          </ion-item>
+    
+
+          <ion-item style="margin-top:5px">
+              <ion-label color="primary">Fecha de nacimiento</ion-label>
+              <ion-datetime displayFormat="MMM DD YYYY" ></ion-datetime>
+                
+          </ion-item>
+
+          <ion-item style="margin-top:5px">
+              <ion-label color="primary" (click)="selectSex()">Sexo: <span style="color:black">{{sex}} </span></ion-label>
+            </ion-item>
+
+            <br>
+
+            <ion-row>
+                <ion-col  col-4 *ngFor="let activity of activities;let i=index">
+                  <button small ion-button (click)="removeActivity(i)">
+                      {{activity.name}}
+                  </button>
+                </ion-col>
+                <ion-col  col-4 >
+                    <button small ion-button (click)="addActivity()">
+                        Añadir actividad
+                    </button>
+                  </ion-col>
+              </ion-row>
+
+              <br>
+
+        </div >
+      
+      
+      </div>
+
+   </div>
+  
+ </ion-content>
+
+ <ion-footer style="padding:5px"> 
+      <ion-toolbar>
+          <ion-segment color="primary" [(ngModel)]="tabs">
+            <ion-segment-button value="information">
+              Información
+            </ion-segment-button>
+            <ion-segment-button value="documents">
+              Documentos
+            </ion-segment-button>
+            <ion-segment-button value="pictures">
+              Fotos
+            </ion-segment-button>
+          </ion-segment>
+        </ion-toolbar>
+          <button style="padding-top:5px;" ion-button full>Hacer publico mi profafolio</button> 
+      
+</ion-footer>
